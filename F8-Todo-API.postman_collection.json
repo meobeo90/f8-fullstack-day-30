@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "7f71ff30-abe6-4780-92bc-50f1e05b5545",
+		"name": "F8 Todo API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40713766"
+	},
+	"item": [
+		{
+			"name": "Get all tasks",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Giặt quần áo\", \r\n    \"completed\": \"false\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API}}/tasks",
+					"host": [
+						"{{BASE_API}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update task",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"completed\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API}}/tasks/7af4",
+					"host": [
+						"{{BASE_API}}"
+					],
+					"path": [
+						"tasks",
+						"7af4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API}}/tasks/7af4",
+					"host": [
+						"{{BASE_API}}"
+					],
+					"path": [
+						"tasks",
+						"7af4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

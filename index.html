@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Page heading -->
+      <h1 class="page-heading">Create your Todo-List</h1>
+
+      <!-- Form -->
+      <form action="" class="todo-form">
+        <input
+          type="text"
+          id="todo-input"
+          class="input"
+          placeholder="Công việc hôm nay là gì?"
+          spellcheck="false"
+        />
+        <button id="submit" class="submit-btn">Thêm</button>
+      </form>
+
+      <!-- Trạng thái Loading và Error -->
+      <div id="tasks-loading" class="loading-spinner">
+        <i class="fa-solid fa-spinner"></i>
+        <p>Đang tải dữ liệu...</p>
+      </div>
+
+      <div id="tasks-error" class="error-message">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <p id="tasks-error-text" class="error-text">
+          Có lỗi xảy ra khi tải dữ liệu!
+        </p>
+      </div>
+
+      <!-- Task list -->
+      <ul id="task-list" class="task-list"></ul>
+
+      <!-- Confirmation Modal (Thay thế alert/confirm) -->
+      <div id="confirmation-modal" class="modal-backdrop">
+        <div class="confirmation-content">
+          <h3 class="modal-title" id="modal-title">Xác nhận</h3>
+          <p class="modal-body" id="modal-body">
+            Bạn có chắc chắn muốn thực hiện hành động này?
+          </p>
+          <div class="btn">
+            <button id="modal-cancel-btn" class="modal-btn">Hủy</button>
+            <button id="modal-confirm-btn" class="modal-btn">Xác nhận</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/main.js"></script>
+  </body>
+</html>
