@@ -225,7 +225,7 @@ tasksList.addEventListener("click", (e) => {
     pendingDeleteId = taskId;
     showConfirmModal(
       "Xác nhận xóa",
-      `Bạn có chắc chắn muốn xóa công việc ${task.title}?`
+      `Bạn có chắc chắn muốn xóa công việc "${task.title}"?`
     );
   }
   // Edit
