@@ -143,7 +143,7 @@ modalConfirmBtn.addEventListener("click", async () => {
     if (!response.ok) {
       throw new Error(`Lỗi HTTP: ${response.status}`);
     }
-    tasks = tasks.filter((t) => t.id !== pendingDeleteId);
+    tasks = tasks.filter((t) => String(t.id) !== String(pendingDeleteId));
     // Xóa trực tiếp DOM
     const taskItem = document.querySelector(`[data-id = "${pendingDeleteId}"]`);
     if (taskItem) taskItem.remove();
