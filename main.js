@@ -145,7 +145,7 @@ modalConfirmBtn.addEventListener("click", async () => {
     }
     tasks = tasks.filter((t) => String(t.id) !== String(pendingDeleteId));
     // Xóa trực tiếp DOM
-    const taskItem = document.querySelector(`[data-id = "${pendingDeleteId}"]`);
+    const taskItem = document.querySelector(`[data-id="${pendingDeleteId}"]`);
     if (taskItem) taskItem.remove();
     hideConfirmModal();
   } catch (error) {
