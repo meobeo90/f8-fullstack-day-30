@@ -148,6 +148,9 @@ modalConfirmBtn.addEventListener("click", async () => {
     const taskItem = document.querySelector(`[data-id="${pendingDeleteId}"]`);
     if (taskItem) taskItem.remove();
     hideConfirmModal();
+    if (tasks.length === 0) {
+      renderTasks();
+    }
   } catch (error) {
     showError("Không thể xóa công việc!");
   }
@@ -161,6 +164,10 @@ function escapeHTML(str) {
 }
 
 function appendTask(task) {
+  const emptyItem = tasksList.querySelector(".task-item .task-title");
+  if (emptyItem && emptyItem.textContent === "Danh sách trống") {
+    emptyItem.closest("li").remove();
+  }
   const li = document.createElement("li");
   li.className = `task-item ${task.completed ? "completed" : ""}`;
   li.dataset.id = task.id;
@@ -182,7 +189,8 @@ function renderTasks() {
   tasksList.innerHTML = "";
   if (!tasks.length) {
     tasksList.innerHTML = `<li class="task-item">
-          <span class="task-title">Danh sách trống</span>`;
+      <span class="task-title">Danh sách trống</span>
+        </li>`;
     return;
   }
   tasks.forEach((task) => appendTask(task));
